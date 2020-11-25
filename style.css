@@ -40,16 +40,28 @@
 .time-container {
     display: flex;
     border: 2px solid silver;
+    align-items: center;
 }
 
 .time-digit {
-    font-size: 7rem;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    font-size: 9rem;
     font-family:"Heebo", sans-serif;
     font-weight: 700;
     border: 2px solid silver;
-    margin-right: 2rem;
+    margin-right: .5rem;
+    padding-top: -15px;
 }
 
-.time {
-    align-self: center;
+.time-of-day {
+    font-size: 2rem;
+    margin-top: 4rem;
+}
+
+.location {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
 }
