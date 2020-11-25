@@ -20,17 +20,18 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding: 0 0 5rem 7rem;
 }
 
 .greeting {
-    /* margin-top: auto; */
+    margin-top: auto;
     display: flex;
-    align-items: center;
 }
 
-.greeting svg {
+.greeting .icon-greeting {
     margin-right: .5rem;
 }
+
 .greeting p {
     text-transform: uppercase;
     font-weight: 500;
@@ -39,29 +40,28 @@
 
 .time-container {
     display: flex;
-    border: 2px solid silver;
     align-items: center;
 }
 
 .time-digit {
-    height: 130px;
     display: flex;
     align-items: center;
     font-size: 9rem;
     font-family:"Heebo", sans-serif;
     font-weight: 700;
-    border: 2px solid silver;
+    /* border: 2px solid silver; */
+    margin: -1.2rem 0 -1.8rem 0;
     margin-right: .5rem;
-    padding-top: -15px;
 }
 
 .time-of-day {
     font-size: 2rem;
-    margin-top: 4rem;
+    margin-top: 4.8rem;
 }
 
 .location {
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-size: 1.2rem;
     font-weight: 700;
 }
