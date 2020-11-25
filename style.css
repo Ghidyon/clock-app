@@ -1,19 +1,55 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Barlow', sans-serif;
-    /* font-family: "Raleway", sans-serif; */
+    color: #ffffff;
     list-style: none;
 }
 
 .container {
+    background-image: url(images/night.jpg);
+    background-size: cover;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.greeting {
+    /* margin-top: auto; */
+    display: flex;
+    align-items: center;
+}
+
+.greeting svg {
+    margin-right: .5rem;
+}
+.greeting p {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
 
 .time-container {
-    min-height: 100vh;
-    background-image: url(images/night.jpg);
-    background-size: cover;
+    display: flex;
+    border: 2px solid silver;
+}
+
+.time-digit {
+    font-size: 7rem;
+    font-family:"Heebo", sans-serif;
+    font-weight: 700;
+    border: 2px solid silver;
+    margin-right: 2rem;
+}
+
+.time {
+    align-self: center;
 }
