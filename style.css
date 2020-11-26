@@ -38,7 +38,7 @@ img {
     padding: 0 1.5rem 3rem 1.5rem;
     /* padding: 0 0 5rem 7rem; */
     transform: translateY(0);
-    transition: transform .5s ease-in;
+    transition: transform .3s ease;
 }
 
 .greeting {
@@ -101,6 +101,7 @@ button {
     padding: .2rem .25rem;
     border-radius: 18px;
     margin-top: 4rem;
+    cursor: pointer;
 }
 
 button span {
@@ -122,6 +123,13 @@ button div {
     justify-content: center;
 }
 
+.less {
+    display: none;
+}
+
+.icon-arrow {
+    transition: transform .2s ease;
+}
 
 /* Date Section */
 
@@ -132,7 +140,7 @@ button div {
     -webkit-backdrop-filter: blur(9px);
     backdrop-filter: blur(9px);
     transform: translateY(0);
-    transition: transform .5s ease-in;
+    transition: transform .3s ease;
 }
 
 .details {
@@ -164,6 +172,28 @@ button div {
 
 .show {
     transform: translateY(-100%);
+}
+
+.show-text {
+    display: inline;
+}
+
+.hide-text {
+    display: none;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 320px) {
+    button {
+        margin-top: 3rem;
+    }
+
+    .date-container {
+        padding: 2rem 1.5rem;
+    }
 }
 
 @media (min-width: 500px) {

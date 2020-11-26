@@ -12,6 +12,9 @@ const week = document.querySelector('#week');
 const button = document.querySelector('.button');
 const details = document.querySelector('.date-container');
 const clock = document.querySelector('.clock-container');
+const moreText = document.querySelector('.more');
+const lessText = document.querySelector('.less');
+const arrowIcon = document.querySelector('.icon-arrow');
 
 const setTime = () => {
     const date = new Date();
@@ -23,7 +26,9 @@ const setTime = () => {
     if (hours > 12) {
         hour.innerHTML = twelvehour;
     }
-    hour.innerHTML = hours;
+    else {
+        hour.innerHTML = hours;
+    }
 
     // Set Minutes
     if (minutes < 10) {
@@ -34,7 +39,7 @@ const setTime = () => {
     }
 
     // Set Time of Day
-    hour.innerHTML >= 12 ? timeOfDay.innerHTML = "pm" : timeOfDay.innerHTML = "am";
+    hours >= 12 ? timeOfDay.innerHTML = "pm" : timeOfDay.innerHTML = "am";
 
     // Set Greeting 
     if (timeOfDay.innerHTML === "am") {
@@ -54,6 +59,9 @@ window.onload = () => setTime();
 setInterval(setTime, 1000);
 
 const transitionData = () => {
+    moreText.classList.toggle('hide-text');
+    lessText.classList.toggle('show-text');
+    arrowIcon.classList.toggle('rotate');
     clock.classList.toggle('slide-up');
     details.classList.toggle('show');
 }
