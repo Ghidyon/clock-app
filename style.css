@@ -45,7 +45,7 @@ img {
     height: 100vh;
     padding: 0 1.5rem 3rem 1.5rem;
     transform: translateY(0);
-    transition: transform .3s ease;
+    transition: transform .2s ease;
 }
 
 .greeting {
@@ -129,7 +129,7 @@ button div {
 }
 
 .icon-arrow {
-    transition: transform .2s ease;
+    transition: transform .3s ease;
 }
 
 /* Date Section */
@@ -139,7 +139,7 @@ button div {
     -webkit-backdrop-filter: blur(9px);
     backdrop-filter: blur(9px);
     transform: translateY(0);
-    transition: transform .3s ease;
+    transition: transform .2s ease;
 }
 
 .details {
@@ -292,9 +292,7 @@ button div {
     .greeting p, .location {    
         font-size: 22px;
     }
-
-    
-
+  
     .time-digit {
         font-size: 11rem;
         margin: -1.5rem 0 -2rem 0;
@@ -315,7 +313,30 @@ button div {
     }     
 }
 
-@media (min-width: 1024px) {    
+@media (min-width: 1024px) {   
+    .clock-container, .details-container {
+        width: 900px;
+        margin: 0 auto;
+    }
+
+    .clock-container {
+        padding: 5rem 0;
+    }
+
+    .greeting p, .location {    
+        font-size: 22px;
+    }
+
+    .time-digit {
+        font-size: 12rem;
+        margin: -1.5rem 0 -2rem 0;
+    }
+
+    .time-of-day {
+        font-size: 2rem;
+        margin: 0rem 0 2.7rem .5rem;
+    }
+
     .flex {
         display: flex;
         justify-content: space-between;
@@ -330,7 +351,7 @@ button div {
         content: '';
         position: absolute;
         width: 1px;
-        height: 205px;
+        height: 215px;
         top: 49%;
         left: 50%;
         transform: translate(-49%, -50%);
@@ -338,7 +359,7 @@ button div {
     }
 
     .slide-up {
-        transform: translateY(-50%);
+        transform: translateY(-47%);
     }
     
     .show {

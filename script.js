@@ -44,8 +44,8 @@ const setTime = () => {
     hours >= 12 ? timeOfDay.innerHTML = "pm" : timeOfDay.innerHTML = "am";
 
     // Set Greeting
-    if (timeOfDay.innerHTML === "am") {
-        greetingText.innerHTML = "good morning";
+    if (hours >= 0 && hours <= 11) {
+        greetingText.innerHTML = "good morning, ";
         greetingIcon.src = "images/icon-sun.svg";
         container.style.backgroundImage = "url('images/daytime.jpg')";
         details.style.background = "rgba(255, 255, 255, 0.8)";
@@ -55,8 +55,30 @@ const setTime = () => {
         });
         bigText.forEach(text => text.classList.add('black'));
     }
+    else if (hours >= 12 && hours < 16) {
+        greetingText.innerHTML = "good afternoon, ";
+        greetingIcon.src = "images/icon-sun.svg";
+        container.style.backgroundImage = "url('images/daytime.jpg')";
+        details.style.background = "rgba(255, 255, 255, 0.8)";
+        smallText.forEach(text => {
+            text.classList.remove('smoke');
+            text.classList.add('gray');
+        });
+        bigText.forEach(text => text.classList.add('black'));
+    }
+    else if (hours >= 16 && hours <= 21) {
+        greetingText.innerHTML = "good evening, ";
+        greetingIcon.src = "images/icon-moon.svg";
+        container.style.backgroundImage = "url('images/night.jpg')";
+        details.style.background = "rgba(0, 0, 0, 0.6)";
+        smallText.forEach(text => {
+            text.classList.remove('gray');
+            text.classList.add('smoke');
+        });
+        bigText.forEach(text => text.classList.remove('black'));
+    }
     else {
-        greetingText.innerHTML = "good evening";
+        greetingText.innerHTML = "good night, ";
         greetingIcon.src = "images/icon-moon.svg";
         container.style.backgroundImage = "url('images/night.jpg')";
         details.style.background = "rgba(0, 0, 0, 0.6)";
