@@ -96,7 +96,7 @@ setInterval(() => { getWeek(new Date) }, 1000);
 
 const getLocation = async () => {
     try {
-        const response = await fetch('http://ip-api.com/json');
+        const response = await fetch('https://ipinfo.io/json');
         const data = await response.json();
 
         // Set location and timezone
@@ -111,3 +111,5 @@ const getLocation = async () => {
 }
 
 window.onload = () => getLocation();
+
+setInterval(getLocation, 30000);
