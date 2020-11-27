@@ -67,3 +67,14 @@ const transitionData = () => {
 }
 
 button.addEventListener('click', transitionData);
+
+const getDayOfYear = day => {
+    let currentTime = new Date(day.getTime());
+    let firstDay = new Date(day.getFullYear(), 0, 1);
+    const presentDay = Math.ceil((currentTime - firstDay + 1) / 86400000);
+    dayOfYear.innerHTML = presentDay;
+}
+// date.getDay()
+setInterval(() => { getDayOfYear(new Date) }, 1000);
+
+// const getWeek
