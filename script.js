@@ -68,13 +68,28 @@ const transitionData = () => {
 
 button.addEventListener('click', transitionData);
 
-const getDayOfYear = day => {
+const getDayAndWeekOfYear = day => {
     let currentTime = new Date(day.getTime());
     let firstDay = new Date(day.getFullYear(), 0, 1);
+
+    // Set day number of the year
     const presentDay = Math.ceil((currentTime - firstDay + 1) / 86400000);
     dayOfYear.innerHTML = presentDay;
+
+    // Set week number of the year
+    const weekNumber = Math.ceil(presentDay / 7);
+    week.innerHTML = weekNumber;
 }
 // date.getDay()
-setInterval(() => { getDayOfYear(new Date) }, 1000);
+setInterval(() => { getDayAndWeekOfYear(new Date) }, 1000);
 
-// const getWeek
+const getWeek = (day) => {
+    if (day.getDay() === 0) {
+        weekDay.innerHTML = 7;
+    }
+    else {
+        weekDay.innerHTML = day.getDay();
+    }
+}
+
+setInterval(() => { getWeek(new Date) }, 1000);
