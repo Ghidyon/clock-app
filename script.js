@@ -15,6 +15,8 @@ const clock = document.querySelector('.clock-container');
 const moreText = document.querySelector('.more');
 const lessText = document.querySelector('.less');
 const arrowIcon = document.querySelector('.icon-arrow');
+const bigText = document.querySelectorAll('.big');
+const smallText = document.querySelectorAll('.small');
 
 const setTime = () => {
     const date = new Date();
@@ -41,16 +43,28 @@ const setTime = () => {
     // Set Time of Day
     hours >= 12 ? timeOfDay.innerHTML = "pm" : timeOfDay.innerHTML = "am";
 
-    // Set Greeting 
+    // Set Greeting
     if (timeOfDay.innerHTML === "am") {
         greetingText.innerHTML = "good morning";
         greetingIcon.src = "images/icon-sun.svg";
         container.style.backgroundImage = "url('images/daytime.jpg')";
+        details.style.background = "rgba(255, 255, 255, 0.8)";
+        smallText.forEach(text => {
+            text.classList.remove('smoke');
+            text.classList.add('gray');
+        });
+        bigText.forEach(text => text.classList.add('black'));
     }
     else {
         greetingText.innerHTML = "good evening";
         greetingIcon.src = "images/icon-moon.svg";
         container.style.backgroundImage = "url('images/night.jpg')";
+        details.style.background = "rgba(0, 0, 0, 0.6)";
+        smallText.forEach(text => {
+            text.classList.remove('gray');
+            text.classList.add('smoke');
+        });
+        bigText.forEach(text => text.classList.remove('black'));
     }
 }
 

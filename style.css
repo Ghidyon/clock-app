@@ -21,9 +21,9 @@ img {
 }
 
 .container {
+    position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('images/night.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -136,7 +136,6 @@ button div {
 .date-container {
     position: relative;
     padding: 3rem 1.5rem;
-    background: rgba(0, 0, 0, 0.6);
     -webkit-backdrop-filter: blur(9px);
     backdrop-filter: blur(9px);
     transform: translateY(0);
@@ -157,7 +156,6 @@ button div {
 .details .small {
     letter-spacing: 2px;
     font-size: 10px;
-    color: #dbdbdb;
 }
 
 .details .big {
@@ -186,6 +184,18 @@ button div {
     transform: rotate(180deg);
 }
 
+.black {
+    color: #000000;
+}
+
+.gray {
+    color: #808080;
+}
+
+.smoke {
+    color: #dbdbdb;
+}
+
 @media (max-width: 320px) {
     button {
         margin-top: 3rem;
@@ -199,5 +209,13 @@ button div {
 @media (min-width: 500px) {
     .hide {
         display: inline;
+    }
+    
+    .container::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
     }
 }
