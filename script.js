@@ -68,10 +68,6 @@ const setTime = () => {
     }
 }
 
-window.onload = () => setTime();
-
-setInterval(setTime, 1000);
-
 const transitionData = () => {
     moreText.classList.toggle('hide-text');
     lessText.classList.toggle('show-text');
@@ -95,8 +91,6 @@ const getDayAndWeekOfYear = day => {
     week.innerHTML = weekNumber;
 }
 
-setInterval(() => { getDayAndWeekOfYear(new Date) }, 1000);
-
 const getWeek = (day) => {
     if (day.getDay() === 0) {
         weekDay.innerHTML = 7;
@@ -105,8 +99,6 @@ const getWeek = (day) => {
         weekDay.innerHTML = day.getDay();
     }
 }
-
-setInterval(() => { getWeek(new Date) }, 1000);
 
 const getLocation = async () => {
     try {
@@ -124,6 +116,11 @@ const getLocation = async () => {
     }
 }
 
-window.onload = () => getLocation();
-
+window.onload = () => {
+    getLocation();
+    setTime();
+}
+setInterval(setTime, 1000);
 setInterval(getLocation, 30000);
+setInterval(() => { getDayAndWeekOfYear(new Date) }, 1000);
+setInterval(() => { getWeek(new Date) }, 1000);

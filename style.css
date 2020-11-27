@@ -31,6 +31,14 @@ img {
     overflow-y: hidden;
 }
 
+.container::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
 .clock-container {
     display: flex;
     flex-direction: column;
@@ -69,18 +77,15 @@ img {
 .time-digit {
     display: flex;
     align-items: center;
-    /* font-size: 9rem; */
     font-size: 5.5rem;
     font-family:"Heebo", sans-serif;
     font-weight: 700;
-    /* border: 2px solid silver; */
     /* margin: -1.2rem 0 -1.8rem 0; */
     margin: -.2rem 0 -.4rem 0;
 }
 
 .time-of-day {
     font-size: 14px;
-    /* font-size: 2rem; */
     align-self: flex-end;
     margin: 0 0 1.7rem .5rem;
     /* margin-top: 4.8rem; */
@@ -162,6 +167,7 @@ button div {
     text-transform: capitalize;
     font-size: 19px;
     font-weight: 700;
+    font-family: "Heebo", sans-serif;
 }
 
 .slide-up {
@@ -212,10 +218,76 @@ button div {
     }
     
     .container::before {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 100%;
         background: rgba(0, 0, 0, 0.3);
     }
+
+    .clock-container {
+        padding: 3rem;
+
+    }
+
+    .greeting p, .location {    
+        font-size: 13px;
+    }
+
+    .time-digit {
+    /* font-size: 9rem; */
+        font-size: 8rem;
+        margin: -1.2rem 0 -1.5rem 0;
+    }
+
+    .time-of-day {
+    /* font-size: 2rem; */
+        font-size: 22px;
+        margin: 0 0 1.7rem .5rem;
+    }
+
+    .date-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "a c" "b d";
+        padding: 5.5rem 3rem;
+        row-gap: 2rem;
+        column-gap: 3rem;
+    }
+
+    .date-container:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background: #808080;
+        height: 50px;
+    }
+
+    .details {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .details-1 {
+        grid-area: a;
+        width: 120%;
+    }
+    
+    .details-2 {
+        width: 120%;
+        grid-area: b;
+    }
+    
+    .details-3 {
+        margin-left: 2rem;
+        grid-area: c;
+    }
+    
+    .details-4 {
+        grid-area: d;
+        margin-left: 2rem;
+    }
+    
+    .details .big {
+        font-size: 33px;
+    }
+
 }
