@@ -44,7 +44,6 @@ img {
     flex-direction: column;
     height: 100vh;
     padding: 0 1.5rem 3rem 1.5rem;
-    /* padding: 0 0 5rem 7rem; */
     transform: translateY(0);
     transition: transform .3s ease;
 }
@@ -80,7 +79,6 @@ img {
     font-size: 5.5rem;
     font-family:"Heebo", sans-serif;
     font-weight: 700;
-    /* margin: -1.2rem 0 -1.8rem 0; */
     margin: -.2rem 0 -.4rem 0;
 }
 
@@ -88,12 +86,10 @@ img {
     font-size: 14px;
     align-self: flex-end;
     margin: 0 0 1.7rem .5rem;
-    /* margin-top: 4.8rem; */
 }
 
 .location {
     letter-spacing: 2px;
-    /* font-size: 18px; */
     font-weight: 700;
 }
 
@@ -139,7 +135,6 @@ button div {
 /* Date Section */
 
 .date-container {
-    position: relative;
     padding: 3rem 1.5rem;
     -webkit-backdrop-filter: blur(9px);
     backdrop-filter: blur(9px);
@@ -171,7 +166,7 @@ button div {
 }
 
 .slide-up {
-    transform: translateY(-37%);
+    transform: translateY(-40%);
 }
 
 .show {
@@ -223,7 +218,6 @@ button div {
 
     .clock-container {
         padding: 3rem;
-
     }
 
     .greeting p, .location {    
@@ -231,32 +225,35 @@ button div {
     }
 
     .time-digit {
-    /* font-size: 9rem; */
         font-size: 8rem;
         margin: -1.2rem 0 -1.5rem 0;
     }
 
     .time-of-day {
-    /* font-size: 2rem; */
         font-size: 22px;
         margin: 0 0 1.7rem .5rem;
     }
 
+    button {
+        padding: .4rem;
+        border-radius: 35px;
+    }
+
+    button span {
+        margin: 0 .5rem 0 .7rem;
+        letter-spacing: 3px;
+    }
+
     .date-container {
+        padding: 5.5rem 3rem;
+    }
+    
+    .details-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "a c" "b d";
-        padding: 5.5rem 3rem;
         row-gap: 2rem;
         column-gap: 3rem;
-    }
-
-    .date-container:before {
-        content: '';
-        position: absolute;
-        width: 2px;
-        background: #808080;
-        height: 50px;
     }
 
     .details {
@@ -277,17 +274,74 @@ button div {
     }
     
     .details-3 {
-        margin-left: 2rem;
+        margin-left: 3rem;
         grid-area: c;
     }
     
     .details-4 {
         grid-area: d;
-        margin-left: 2rem;
+        margin-left: 3rem;
     }
     
     .details .big {
         font-size: 33px;
+    }  
+}
+
+@media (min-width: 768px) {
+    .greeting p, .location {    
+        font-size: 22px;
     }
 
+    
+
+    .time-digit {
+        font-size: 11rem;
+        margin: -1.5rem 0 -2rem 0;
+    }
+
+    .time-of-day {
+        font-size: 2rem;
+        margin: 0rem 0 2rem .5rem;
+    }
+ 
+    .details .big {
+        font-size: 50px;
+    }
+
+    .details .small {
+        font-size: 14px;
+        margin-bottom: .2rem;
+    }     
+}
+
+@media (min-width: 1024px) {    
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    button {
+        margin-top: -1rem;
+    }
+
+    .date-container:before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 205px;
+        top: 49%;
+        left: 50%;
+        transform: translate(-49%, -50%);
+        background: #808080;
+    }
+
+    .slide-up {
+        transform: translateY(-50%);
+    }
+    
+    .show {
+        transform: translateY(-100%);
+    } 
 }
