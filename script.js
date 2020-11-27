@@ -4,8 +4,8 @@ const greetingText = document.querySelector('.greeting-text');
 const hour = document.querySelector('#hour');
 const minute = document.querySelector('#minute');
 const timeOfDay = document.querySelector('.time-of-day');
-const presentLocation = document.querySelector('#location');
-const timezone = document.querySelector('#timezone');
+const presentLocation = document.querySelector('.location');
+const timeZone = document.querySelector('#timezone');
 const dayOfYear = document.querySelector('#day-of-year');
 const weekDay = document.querySelector('#day-of-week');
 const week = document.querySelector('#week');
@@ -80,7 +80,7 @@ const getDayAndWeekOfYear = day => {
     const weekNumber = Math.ceil(presentDay / 7);
     week.innerHTML = weekNumber;
 }
-// date.getDay()
+
 setInterval(() => { getDayAndWeekOfYear(new Date) }, 1000);
 
 const getWeek = (day) => {
@@ -93,3 +93,21 @@ const getWeek = (day) => {
 }
 
 setInterval(() => { getWeek(new Date) }, 1000);
+
+const getLocation = async () => {
+    try {
+        const response = await fetch('http://ip-api.com/json');
+        const data = await response.json();
+
+        // Set location and timezone
+        const { city, country, timezone } = data;
+        presentLocation.innerHTML = `In ${city}, ${country}`;
+        timeZone.innerHTML = timezone;
+    }
+    catch (error) {
+        presentLocation.innerHTML = "Location Data is Not Available";
+        timeZone.innerHTML = "Data Not Available";
+    }
+}
+
+window.onload = () => getLocation();
