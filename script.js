@@ -114,7 +114,7 @@ const getWeek = (day) => {
 
 const getLocation = async () => {
     try {
-        const response = await fetch('https://ipinfo.io/json');
+        const response = await fetch('https://ipapi.co/json');
         const data = await response.json();
 
         // Set location and timezone
