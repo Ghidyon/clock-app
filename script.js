@@ -28,6 +28,9 @@ const setTime = () => {
     if (hours > 12) {
         hour.innerHTML = twelvehour;
     }
+    else if (hours === 0) {
+        hour.innerHTML = 12;
+    } 
     else {
         hour.innerHTML = hours;
     }
