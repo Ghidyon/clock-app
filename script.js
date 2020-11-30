@@ -48,16 +48,16 @@ const setTime = () => {
 
     // Set Greeting
     if (hours >= 0 && hours <= 11) {
-        greetingText.innerHTML = "good morning, ";
+        greetingText.innerHTML = "good morning";
     }
     else if (hours >= 12 && hours < 16) {
-        greetingText.innerHTML = "good afternoon, ";
+        greetingText.innerHTML = "good afternoon";
     }
     else if (hours >= 16 && hours <= 21) {
-        greetingText.innerHTML = "good evening, ";
+        greetingText.innerHTML = "good evening";
     }
     else {
-        greetingText.innerHTML = "good night, ";
+        greetingText.innerHTML = "good night";
     }
 
     // Set background
